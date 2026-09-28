@@ -1,65 +1,25 @@
-window.addEventListener('DOMContentLoaded', () => {
-  const initialScreen = 'homeScreen';
-  showScreen(initialScreen);
+# RAÍZES VIVAS
 
-  const userNameInput = document.getElementById('userName');
-  const userNicknameInput = document.getElementById('userNickname');
+Aplicativo web interativo de descoberta sobre memória, identidade, cultura, ancestralidade, resistência, território e futuro.
 
-  if (userNameInput) {
-    userNameInput.value = state.name || '';
-  }
+## Visão geral
 
-  if (userNicknameInput) {
-    userNicknameInput.value = state.nickname || '';
-  }
+RAÍZES VIVAS é uma experiência educativa e artística criada pela equipe NEXOS para explorar temas ligados à consciência negra, ancestralidade, memória, cultura e continuidades históricas.
 
-  renderCharacters(state.characterId);
-  renderJourney();
-  updateJourneySummary();
+## Estrutura
 
-  const finalScreen = document.getElementById('finalScreen');
-  if (finalScreen) {
-    const journeyButton = document.getElementById('mapJourneyBtn');
-    if (journeyButton) {
-      journeyButton.addEventListener('click', () => {
-        if (state.discoveredRoots.length >= Object.keys(ROOT_CONTENT).length) {
-          showScreen('finalScreen');
-          updateJourneySummary();
-        } else {
-          showScreen('journeyScreen');
-          renderJourney();
-        }
-      });
-    }
-  }
+- `index.html`: estrutura principal da aplicação
+- `css/`: estilos globais e da tela inicial
+- `js/data/`: dados de conteúdo e personagens
+- `js/modules/`: módulos de navegação, jornada e conteúdo
+- `js/utils/`: utilitários de armazenamento e navegação
+- `assets/images/logos/`: logo da equipe NEXOS
 
-  const aboutButton = document.getElementById('mapMenuBtn');
-  if (aboutButton) {
-    aboutButton.addEventListener('click', () => showScreen('aboutScreen'));
-  }
+## Como executar
 
-  const finalBtn = document.getElementById('restartBtn');
-  if (finalBtn) {
-    finalBtn.addEventListener('click', () => {
-      const fresh = resetJourney();
-      Object.assign(state, fresh);
-      showScreen('homeScreen');
-      renderCharacters();
-      renderJourney();
-      updateJourneySummary();
-    });
-  }
+Abra o arquivo `index.html` em um navegador ou hospede em um servidor estático.
 
-  const journeyShowFinal = document.getElementById('journeyContent');
-  if (journeyShowFinal && state.discoveredRoots.length >= Object.keys(ROOT_CONTENT).length) {
-    const finalAction = document.createElement('button');
-    finalAction.type = 'button';
-    finalAction.className = 'btn btn-primary';
-    finalAction.textContent = 'Concluir Jornada';
-    finalAction.addEventListener('click', () => {
-      showScreen('finalScreen');
-      updateJourneySummary();
-    });
-    journeyShowFinal.appendChild(finalAction);
-  }
-});
+## Equipe
+
+RAÍZES VIVAS
+Uma experiência criada pela equipe NEXOS

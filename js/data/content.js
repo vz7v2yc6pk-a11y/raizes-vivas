@@ -13,7 +13,7 @@ const ROOT_CONTENT = {
       {
         type: 'story',
         title: 'A força da memória',
-        text: 'Nzinga Mbandi, rainha de Ndongo e Matamba, representa liderança, estratégia e resistência. Sua hist��ria nos lembra que o povo africano sempre foi protagonista, mesmo diante de opressões e tentativas de apagamento. A memória de sua trajetória fortalece a ideia de que a história de África não pode ser lida apenas como fundo de outros acontecimentos.'
+        text: 'Nzinga Mbandi, rainha de Ndongo e Matamba, representa liderança, estratégia e resistência. Sua história nos lembra que o povo africano sempre foi protagonista, mesmo diante de opressões e tentativas de apagamento. A memória de sua trajetória fortalece a ideia de que a história de África não pode ser lida apenas como fundo de outros acontecimentos.'
       },
       {
         type: 'exploration',
@@ -35,7 +35,6 @@ const ROOT_CONTENT = {
     ],
     discovery: 'Você encontrou uma raiz que conecta memória, origem e identidade. O passado não é apenas lembrado: ele ainda orienta o presente.'
   },
-
   culturas: {
     id: 'culturas',
     title: 'CULTURAS',
@@ -72,7 +71,6 @@ const ROOT_CONTENT = {
     ],
     discovery: 'Você descobriu que cultura é um território de identidade, memória e criação. Ela dá forma ao modo como as pessoas se reconhecem e se encontram.'
   },
-
   resistencia: {
     id: 'resistencia',
     title: 'RESISTÊNCIA',
@@ -109,7 +107,6 @@ const ROOT_CONTENT = {
     ],
     discovery: 'Você percebeu que resistência é também pensamento, organização e coragem. Ela sustenta a possibilidade de um futuro mais justo e consciente.'
   },
-
   presente: {
     id: 'presente',
     title: 'PRESENTE E FUTURO',
@@ -147,24 +144,3 @@ const ROOT_CONTENT = {
     discovery: 'Você concluiu que memória, identidade e futuro caminham juntos. O que se reconhece hoje pode transformar o mundo que virá.'
   }
 };
-
-const CHARACTERS = [
-  {
-    id: 'sabiia',
-    name: 'Sabiá',
-    description: 'Espírito de escuta, observação e memória ancestral.',
-    avatar: '🕊️'
-  },
-  {
-    id: 'nina',
-    name: 'Nina',
-    description: 'Guia de descoberta, criatividade e atenção ao território.',
-    avatar: '🌿'
-  },
-  {
-    id: 'sol',
-    name: 'Sol',
-    description: 'Presença luminosa, coragem e presença de transformação.',
-    avatar: '☀️'
-  }
-];
