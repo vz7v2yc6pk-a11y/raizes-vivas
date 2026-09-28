@@ -51,14 +51,23 @@ const advanceRootContent = () => {
   if (!state.discoveredRoots.includes(rootId)) {
     state.discoveredRoots.push(rootId);
     state.journeyCount = state.discoveredRoots.length;
-    state.completed = state.discoveredRoots.length >= Object.keys(ROOT_CONTENT).length;
   }
 
   state.currentRoot = null;
   state.currentStep = 0;
+
+  const isFinalPhase = state.discoveredRoots.length >= Object.keys(ROOT_CONTENT).length;
+  state.completed = isFinalPhase;
+
   saveState(state);
   renderJourney();
   updateJourneySummary();
+
+  if (isFinalPhase) {
+    showScreen('finalScreen');
+    return;
+  }
+
   showScreen('mapScreen');
   setActiveRoot(null);
 };

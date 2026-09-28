@@ -19,11 +19,24 @@ const renderJourney = () => {
     `;
   }).join('');
 
+  const finalAction = state.discoveredRoots.length >= Object.keys(ROOT_CONTENT).length
+    ? `<button id="finalJourneyBtn" class="btn btn-primary" type="button">Concluir Jornada</button>`
+    : '';
+
   journeyContent.innerHTML = `
     <div class="journey-grid">
       ${cards}
     </div>
+    ${finalAction}
   `;
+
+  const finalJourneyBtn = document.getElementById('finalJourneyBtn');
+  if (finalJourneyBtn) {
+    finalJourneyBtn.addEventListener('click', () => {
+      showScreen('finalScreen');
+      updateJourneySummary();
+    });
+  }
 };
 
 const updateJourneySummary = () => {

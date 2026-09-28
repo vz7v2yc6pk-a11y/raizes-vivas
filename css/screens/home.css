@@ -119,7 +119,6 @@ body {
   50% { transform: translateY(-18px) scale(1.2); opacity: 0.8; }
 }
 
-
 .screen-guardian,
 .screen-name,
 .screen-character,
@@ -346,7 +345,7 @@ body {
 
 .root-group {
   cursor: pointer;
-  transition: transform 0.2s ease, opacity 0.2s ease;
+  transition: transform 0.2s ease, opacity 0.2s ease, filter 0.2s ease;
 }
 
 .root-group:hover {
@@ -357,6 +356,7 @@ body {
 .root-group.active .root-point {
   stroke: #f0ca8d;
   fill: #f0ca8d;
+  filter: drop-shadow(0 0 10px rgba(240, 202, 141, 0.45));
 }
 
 .root-label {
