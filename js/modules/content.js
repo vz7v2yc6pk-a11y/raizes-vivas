@@ -1,5 +1,5 @@
 if (typeof renderRootContent === 'undefined') {
-  const renderRootContent = (rootId) => {
+  const renderRootContent = (rootId, explicitStep = null) => {
     const rootData = ROOT_CONTENT[rootId];
     const contentTitle = document.getElementById('contentTitle');
     const contentMain = document.getElementById('contentMain');
@@ -7,10 +7,14 @@ if (typeof renderRootContent === 'undefined') {
 
     if (!rootData || !contentTitle || !contentMain || !nextBtn) return;
 
-    const stepIndex = (window.__raizesState && window.__raizesState.currentStep) || 0;
-    const section = rootData.sections[stepIndex];
+    const currentStep = explicitStep ?? (state.currentStep ?? 0);
+    const section = rootData.sections[currentStep];
 
     if (!section) return;
+
+    state.currentRoot = rootId;
+    state.currentStep = currentStep;
+    saveState(state);
 
     contentTitle.textContent = rootData.title;
     contentMain.innerHTML = `
@@ -24,28 +28,32 @@ if (typeof renderRootContent === 'undefined') {
       </div>
     `;
 
-    nextBtn.textContent = stepIndex >= rootData.sections.length - 1 ? 'Voltar à árvore' : 'Próximo';
+    nextBtn.textContent = currentStep >= rootData.sections.length - 1 ? 'Voltar à árvore' : 'Próximo';
   };
 }
 
 if (typeof advanceRootContent === 'undefined') {
   const advanceRootContent = () => {
-    const rootId = (window.__raizesState && window.__raizesState.currentRoot) || null;
-    const rootData = rootId ? ROOT_CONTENT[rootId] : null;
+    const rootId = state.currentRoot;
+    if (!rootId) return;
 
+    const rootData = ROOT_CONTENT[rootId];
     if (!rootData) return;
 
     const lastIndex = rootData.sections.length - 1;
-    const currentStep = (window.__raizesState && window.__raizesState.currentStep) || 0;
+    const currentStep = state.currentStep ?? 0;
 
     if (currentStep < lastIndex) {
-      window.__raizesState.currentStep = currentStep + 1;
-      renderRootContent(rootId);
+      state.currentStep = currentStep + 1;
+      saveState(state);
+      renderRootContent(rootId, state.currentStep);
       return;
     }
 
     if (!state.discoveredRoots.includes(rootId)) {
       state.discoveredRoots.push(rootId);
+      state.journeyCount = state.discoveredRoots.length;
+      state.completed = state.discoveredRoots.length >= Object.keys(ROOT_CONTENT).length;
     }
 
     state.currentRoot = null;

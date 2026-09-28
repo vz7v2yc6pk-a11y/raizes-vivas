@@ -1,5 +1,3 @@
-const state = loadState();
-
 window.addEventListener('DOMContentLoaded', () => {
   const mapScreen = document.getElementById('mapScreen');
   if (!mapScreen) return;
@@ -13,7 +11,7 @@ window.addEventListener('DOMContentLoaded', () => {
       saveState(state);
       setActiveRoot(rootId);
       showScreen('contentScreen');
-      renderRootContent(rootId);
+      renderRootContent(rootId, 0);
     });
   });
 

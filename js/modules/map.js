@@ -1,4 +1,4 @@
-const renderRootContent = (rootId) => {
+const renderRootContent = (rootId, explicitStep = null) => {
   const rootData = ROOT_CONTENT[rootId];
   const contentTitle = document.getElementById('contentTitle');
   const contentMain = document.getElementById('contentMain');
@@ -6,10 +6,16 @@ const renderRootContent = (rootId) => {
 
   if (!rootData || !contentTitle || !contentMain || !nextBtn) return;
 
-  let stepIndex = state.currentStep || 0;
-  const section = rootData.sections[stepIndex];
+  const currentStep = explicitStep ?? (state.currentStep ?? 0);
+  const section = rootData.sections[currentStep];
 
-  contentTitle.textContent = `${rootData.title}`;
+  if (!section) return;
+
+  state.currentRoot = rootId;
+  state.currentStep = currentStep;
+  saveState(state);
+
+  contentTitle.textContent = rootData.title;
   contentMain.innerHTML = `
     <div class="content-card">
       <span class="content-badge">${rootData.badge}</span>
@@ -21,7 +27,7 @@ const renderRootContent = (rootId) => {
     </div>
   `;
 
-  const isLastStep = stepIndex >= rootData.sections.length - 1;
+  const isLastStep = currentStep >= rootData.sections.length - 1;
   nextBtn.textContent = isLastStep ? 'Voltar à árvore' : 'Próximo';
 };
 
@@ -33,12 +39,12 @@ const advanceRootContent = () => {
   if (!rootData) return;
 
   const lastIndex = rootData.sections.length - 1;
-  if (!state.currentStep) state.currentStep = 0;
+  const currentStep = state.currentStep ?? 0;
 
-  if (state.currentStep < lastIndex) {
-    state.currentStep += 1;
+  if (currentStep < lastIndex) {
+    state.currentStep = currentStep + 1;
     saveState(state);
-    renderRootContent(rootId);
+    renderRootContent(rootId, state.currentStep);
     return;
   }
 
@@ -48,12 +54,11 @@ const advanceRootContent = () => {
     state.completed = state.discoveredRoots.length >= Object.keys(ROOT_CONTENT).length;
   }
 
+  state.currentRoot = null;
+  state.currentStep = 0;
   saveState(state);
   renderJourney();
   updateJourneySummary();
-
-  state.currentStep = 0;
-  saveState(state);
   showScreen('mapScreen');
   setActiveRoot(null);
 };
@@ -62,14 +67,6 @@ window.addEventListener('DOMContentLoaded', () => {
   const nextContentBtn = document.getElementById('nextContentBtn');
   if (nextContentBtn) {
     nextContentBtn.addEventListener('click', advanceRootContent);
-  }
-
-  const mapJourneyBtn = document.getElementById('mapJourneyBtn');
-  if (mapJourneyBtn) {
-    mapJourneyBtn.addEventListener('click', () => {
-      showScreen('journeyScreen');
-      renderJourney();
-    });
   }
 
   const backFromContent = document.getElementById('backFromContent');
@@ -93,6 +90,14 @@ window.addEventListener('DOMContentLoaded', () => {
     backFromAbout.addEventListener('click', () => showScreen('mapScreen'));
   }
 
+  const mapJourneyBtn = document.getElementById('mapJourneyBtn');
+  if (mapJourneyBtn) {
+    mapJourneyBtn.addEventListener('click', () => {
+      renderJourney();
+      showScreen('journeyScreen');
+    });
+  }
+
   const restartBtn = document.getElementById('restartBtn');
   if (restartBtn) {
     restartBtn.addEventListener('click', () => {
@@ -102,14 +107,6 @@ window.addEventListener('DOMContentLoaded', () => {
       renderCharacters();
       renderJourney();
       updateJourneySummary();
-    });
-  }
-
-  const journeyBtn = document.getElementById('mapJourneyBtn');
-  if (journeyBtn) {
-    journeyBtn.addEventListener('click', () => {
-      renderJourney();
-      showScreen('journeyScreen');
     });
   }
 });
