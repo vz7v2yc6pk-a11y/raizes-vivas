@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 400" role="img" aria-label="Logo NEXOS">
+  <defs>
+    <linearGradient id="nexoGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0a9ad3"/>
+      <stop offset="45%" stop-color="#1b6fe5"/>
+      <stop offset="100%" stop-color="#4b2dc4"/>
+    </linearGradient>
+  </defs>
+  <g transform="translate(40,20)">
+    <g fill="none" stroke="url(#nexoGrad)" stroke-width="20" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M110 280 L110 150 L50 150 L50 70 L170 70 L170 230"/>
+      <path d="M260 70 L260 230 L330 230 L330 150 L390 150 L390 280"/>
+      <path d="M180 210 L280 110"/>
+      <path d="M180 110 L280 210"/>
+      <circle cx="110" cy="70" r="22" fill="url(#nexoGrad)" stroke="none"/>
+      <circle cx="390" cy="280" r="22" fill="url(#nexoGrad)" stroke="none"/>
+      <circle cx="170" cy="70" r="22" fill="url(#nexoGrad)" stroke="none"/>
+      <circle cx="330" cy="230" r="22" fill="url(#nexoGrad)" stroke="none"/>
+    </g>
+  </g>
+  <g transform="translate(470,120)">
+    <text x="0" y="120" font-size="180" font-family="Arial, Helvetica, sans-serif" font-weight="900" fill="#1f2a32" letter-spacing="8">NEXOS</text>
+  </g>
+</svg>

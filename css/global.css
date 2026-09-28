@@ -1,0 +1,117 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-1: #f4efe8;
+  --bg-2: #e7ddcf;
+  --panel: rgba(26, 24, 22, 0.78);
+  --panel-soft: rgba(255, 255, 255, 0.08);
+  --terracotta: #9d5d3e;
+  --wood: #5a3927;
+  --olive: #213a2b;
+  --olive-light: #4d7a5d;
+  --leaf: #386a3a;
+  --gold: #d8b371;
+  --text: #f6f1eb;
+  --muted: #d5cabf;
+  --ink: #201a17;
+  --shadow: rgba(17, 14, 12, 0.25);
+  --root: #78543d;
+  --card: rgba(255, 255, 255, 0.05);
+  --line: rgba(255,255,255,0.12);
+  --success: #7ccf9f;
+  --warning: #f0ca8d;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+  background: linear-gradient(180deg, var(--bg-1), var(--bg-2));
+  color: var(--ink);
+}
+
+body {
+  min-height: 100vh;
+}
+
+button, input, textarea {
+  font: inherit;
+}
+
+#app {
+  min-height: 100vh;
+  position: relative;
+}
+
+.screen {
+  display: none;
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+}
+
+.screen.active {
+  display: block;
+}
+
+.btn {
+  border: none;
+  border-radius: 999px;
+  padding: 0.9rem 1.5rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  transition: transform 0.2s ease, filter 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.04);
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #3c5d50, #1d2d24);
+  color: white;
+  box-shadow: 0 12px 24px rgba(28, 45, 36, 0.25);
+}
+
+.btn-back {
+  border: none;
+  background: rgba(255,255,255,0.08);
+  color: var(--text);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  font-size: 1.3rem;
+  cursor: pointer;
+}
+
+input, textarea {
+  width: 100%;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,0.12);
+  background: rgba(255,255,255,0.04);
+  color: var(--text);
+  padding: 0.9rem 1rem;
+}
+
+input::placeholder, textarea::placeholder {
+  color: rgba(255,255,255,0.6);
+}
+
+input:focus, textarea:focus {
+  outline: 2px solid rgba(223, 189, 130, 0.55);
+  border-color: transparent;
+}
+
+textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.hidden {
+  display: none !important;
+}
