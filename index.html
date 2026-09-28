@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="RAÍZES VIVAS - Experiência interativa sobre memória, identidade, cultura, ancestralidade e consciência negra">
+    <title>RAÍZES VIVAS</title>
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/screens/home.css">
+</head>
+<body>
+    <div id="app" class="app">
+        <!-- HOME SCREEN -->
+        <section id="homeScreen" class="screen screen-home">
+            <div class="home-container">
+                <div class="home-content">
+                    <div class="tree-animation">
+                        <svg class="tree-logo" viewBox="0 0 200 300" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Raízes -->
+                            <g class="roots">
+                                <path class="root root-1" d="M 100 250 Q 70 270 50 290" fill="none" stroke="#8B5A3C" stroke-width="6"/>
+                                <path class="root root-2" d="M 100 250 Q 130 270 150 290" fill="none" stroke="#8B5A3C" stroke-width="6"/>
+                                <path class="root root-3" d="M 100 250 Q 85 280 75 300" fill="none" stroke="#654321" stroke-width="4"/>
+                                <path class="root root-4" d="M 100 250 Q 115 280 125 300" fill="none" stroke="#654321" stroke-width="4"/>
+                            </g>
+                            <!-- Tronco -->
+                            <rect class="trunk" x="90" y="150" width="20" height="100" fill="#654321" rx="4"/>
+                            <!-- Galhos -->
+                            <g class="branches">
+                                <path class="branch" d="M 95 170 Q 60 150 40 130" fill="none" stroke="#8B5A3C" stroke-width="5" stroke-linecap="round"/>
+                                <path class="branch" d="M 105 170 Q 140 150 160 130" fill="none" stroke="#8B5A3C" stroke-width="5" stroke-linecap="round"/>
+                                <path class="branch" d="M 92 130 Q 70 110 50 90" fill="none" stroke="#8B5A3C" stroke-width="4" stroke-linecap="round"/>
+                                <path class="branch" d="M 108 130 Q 130 110 150 90" fill="none" stroke="#8B5A3C" stroke-width="4" stroke-linecap="round"/>
+                            </g>
+                            <!-- Folhas -->
+                            <g class="leaves">
+                                <ellipse class="leaf leaf-1" cx="30" cy="120" rx="8" ry="12" fill="#2D5016" opacity="0.8"/>
+                                <ellipse class="leaf leaf-2" cx="170" cy="120" rx="8" ry="12" fill="#2D5016" opacity="0.8"/>
+                                <ellipse class="leaf leaf-3" cx="45" cy="80" rx="7" ry="11" fill="#3A6B1F" opacity="0.7"/>
+                                <ellipse class="leaf leaf-4" cx="155" cy="80" rx="7" ry="11" fill="#3A6B1F" opacity="0.7"/>
+                                <ellipse class="leaf leaf-5" cx="100" cy="60" rx="8" ry="12" fill="#4A7C2C" opacity="0.8"/>
+                                <ellipse class="leaf leaf-6" cx="75" cy="50" rx="6" ry="10" fill="#2D5016" opacity="0.6"/>
+                                <ellipse class="leaf leaf-7" cx="125" cy="50" rx="6" ry="10" fill="#2D5016" opacity="0.6"/>
+                            </g>
+                        </svg>
+                    </div>
+
+                    <h1 class="title">RAÍZES VIVAS</h1>
+                    <p class="subtitle">Memória que permanece. Histórias que continuam.</p>
+
+                    <button id="startBtn" class="btn btn-primary btn-large">
+                        <span>COMEÇAR JORNADA</span>
+                    </button>
+
+                    <div class="footer-credit">
+                        <p>Uma experiência criada pela equipe <strong>NEXOS</strong></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Partículas de fundo -->
+            <div class="particles">
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+            </div>
+        </section>
+
+        <!-- GUARDIAN SCREEN -->
+        <section id="guardianScreen" class="screen screen-guardian">
+            <div class="guardian-container">
+                <button class="btn-back" id="backFromGuardian" title="Voltar">←</button>
+                
+                <div class="guardian-content">
+                    <div class="guardian-illustration">
+                        <div class="guardian-figure"></div>
+                    </div>
+                    
+                    <div class="guardian-message">
+                        <h2>Guardiã da Memória</h2>
+                        <p class="guardian-speech">
+                            Bem-vindo. Eu sou a Guardiã da Memória. Neste espaço, você não está apenas visitando histórias — está entrando em um lugar onde as raízes permanecem vivas.
+                        </p>
+                        <p class="guardian-speech">
+                            Abaixo da superfície existem histórias. Histórias de ancestralidade, cultura, resistência e continuidade. Cada raiz que você explorar revelaráFragmentos dessa jornada.
+                        </p>
+                        <p class="guardian-speech">
+                            Você não precisa seguir um caminho pré-definido. Escolha qual raiz deseja explorar primeiro. Todas estão conectadas. Todas estão vivas.
+                        </p>
+                        <button id="continueFromGuardian" class="btn btn-primary">Continuar</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- NAME SELECTION SCREEN -->
+        <section id="nameScreen" class="screen screen-name">
+            <div class="name-container">
+                <button class="btn-back" id="backFromName" title="Voltar">←</button>
+                
+                <div class="name-content">
+                    <h2>Antes de começar, escolha como você será lembrado nesta jornada.</h2>
+                    
+                    <form id="nameForm" class="name-form">
+                        <div class="form-group">
+                            <label for="userName">Seu nome:</label>
+                            <input type="text" id="userName" placeholder="Digite seu nome" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="userNickname">Apelido (opcional):</label>
+                            <input type="text" id="userNickname" placeholder="Ou um apelido que prefira">
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary">Próximo</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- CHARACTER SELECTION SCREEN -->
+        <section id="characterScreen" class="screen screen-character">
+            <div class="character-container">
+                <button class="btn-back" id="backFromCharacter" title="Voltar">←</button>
+                
+                <div class="character-content">
+                    <h2>Agora escolha quem acompanhará você.</h2>
+                    
+                    <div id="charactersGrid" class="characters-grid">
+                        <!-- Personagens serão inseridos via JavaScript -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- MAIN MAP SCREEN -->
+        <section id="mapScreen" class="screen screen-map">
+            <div class="map-container">
+                <header class="map-header">
+                    <button id="mapMenuBtn" class="btn-menu" title="Menu">☰</button>
+                    <h1>RAÍZES VIVAS</h1>
+                    <button id="mapJourneyBtn" class="btn-journey" title="Minha Jornada">📖</button>
+                </header>
+
+                <main class="map-main">
+                    <div class="tree-main">
+                        <svg class="tree-map" viewBox="0 0 400 500" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Raízes interativas -->
+                            <g id="rootsGroup" class="roots-main">
+                                <!-- Raiz 1: ANCESTRALIDADE -->
+                                <g class="root-group root-ancestralidade" data-root="ancestralidade">
+                                    <path class="root-line" d="M 200 350 Q 100 420 50 480" fill="none" stroke="#8B5A3C" stroke-width="8"/>
+                                    <circle class="root-point" cx="50" cy="480" r="12" fill="#8B5A3C"/>
+                                    <text class="root-label" x="50" y="500" text-anchor="middle">ANCESTRALIDADE</text>
+                                </g>
+                                
+                                <!-- Raiz 2: CULTURAS -->
+                                <g class="root-group root-culturas" data-root="culturas">
+                                    <path class="root-line" d="M 200 350 Q 320 420 350 480" fill="none" stroke="#8B5A3C" stroke-width="8"/>
+                                    <circle class="root-point" cx="350" cy="480" r="12" fill="#8B5A3C"/>
+                                    <text class="root-label" x="350" y="500" text-anchor="middle">CULTURAS</text>
+                                </g>
+                                
+                                <!-- Raiz 3: RESISTÊNCIA -->
+                                <g class="root-group root-resistencia" data-root="resistencia">
+                                    <path class="root-line" d="M 200 350 Q 140 400 90 450" fill="none" stroke="#8B5A3C" stroke-width="8"/>
+                                    <circle class="root-point" cx="90" cy="450" r="12" fill="#8B5A3C"/>
+                                    <text class="root-label" x="90" y="470" text-anchor="middle">RESISTÊNCIA</text>
+                                </g>
+                                
+                                <!-- Raiz 4: PRESENTE E FUTURO -->
+                                <g class="root-group root-presente" data-root="presente">
+                                    <path class="root-line" d="M 200 350 Q 260 400 310 450" fill="none" stroke="#8B5A3C" stroke-width="8"/>
+                                    <circle class="root-point" cx="310" cy="450" r="12" fill="#8B5A3C"/>
+                                    <text class="root-label" x="310" y="470" text-anchor="middle">PRESENTE E FUTURO</text>
+                                </g>
+                            </g>
+                            
+                            <!-- Tronco principal -->
+                            <rect class="trunk-main" x="185" y="180" width="30" height="170" fill="#654321" rx="4"/>
+                            
+                            <!-- Galhos -->
+                            <g class="branches-main">
+                                <path class="branch-line" d="M 190 200 Q 130 160 80 140" fill="none" stroke="#8B5A3C" stroke-width="6"/>
+                                <path class="branch-line" d="M 210 200 Q 270 160 320 140" fill="none" stroke="#8B5A3C" stroke-width="6"/>
+                                <path class="branch-line" d="M 188 140 Q 140 100 100 70" fill="none" stroke="#8B5A3C" stroke-width="5"/>
+                                <path class="branch-line" d="M 212 140 Q 260 100 300 70" fill="none" stroke="#8B5A3C" stroke-width="5"/>
+                            </g>
+                            
+                            <!-- Copa da árvore (folhas) -->
+                            <g class="crown">
+                                <circle class="leaf-cluster" cx="200" cy="80" r="50" fill="#2D5016" opacity="0.7"/>
+                                <circle class="leaf-cluster" cx="150" cy="120" r="40" fill="#3A6B1F" opacity="0.6"/>
+                                <circle class="leaf-cluster" cx="250" cy="120" r="40" fill="#3A6B1F" opacity="0.6"/>
+                                <circle class="leaf-cluster" cx="110" cy="150" r="30" fill="#2D5016" opacity="0.5"/>
+                                <circle class="leaf-cluster" cx="290" cy="150" r="30" fill="#2D5016" opacity="0.5"/>
+                            </g>
+                        </svg>
+                    </div>
+                </main>
+            </div>
+        </section>
+
+        <!-- ROOT CONTENT SCREEN -->
+        <section id="contentScreen" class="screen screen-content">
+            <div class="content-container">
+                <header class="content-header">
+                    <button class="btn-back" id="backFromContent" title="Voltar">←</button>
+                    <h1 id="contentTitle">Carregando...</h1>
+                </header>
+
+                <main id="contentMain" class="content-main">
+                    <!-- Conteúdo dinâmico será inserido aqui -->
+                </main>
+
+                <footer class="content-footer">
+                    <button id="nextContentBtn" class="btn btn-primary">Próximo</button>
+                </footer>
+            </div>
+        </section>
+
+        <!-- JOURNEY SCREEN -->
+        <section id="journeyScreen" class="screen screen-journey">
+            <div class="journey-container">
+                <header class="journey-header">
+                    <button class="btn-back" id="backFromJourney" title="Voltar">←</button>
+                    <h1>Minha Jornada</h1>
+                </header>
+
+                <main id="journeyContent" class="journey-content">
+                    <!-- Conteúdo de jornada será inserido aqui -->
+                </main>
+            </div>
+        </section>
+
+        <!-- ABOUT SCREEN -->
+        <section id="aboutScreen" class="screen screen-about">
+            <div class="about-container">
+                <header class="about-header">
+                    <button class="btn-back" id="backFromAbout" title="Voltar">←</button>
+                    <h1>Sobre o Projeto</h1>
+                </header>
+
+                <main class="about-content">
+                    <div class="about-section">
+                        <h2>RAÍZES VIVAS</h2>
+                        <p>Uma experiência interativa sobre memória, identidade, cultura, ancestralidade e consciência negra.</p>
+                    </div>
+
+                    <div class="about-section">
+                        <h3>Criado pela equipe</h3>
+                        <div class="nexos-logo-container">
+                            <img id="nexosLogo" src="assets/images/logos/nexos-logo.png" alt="Logo NEXOS" class="nexos-logo">
+                        </div>
+                    </div>
+
+                    <div class="about-section">
+                        <h3>Integrantes</h3>
+                        <div id="teamMembers" class="team-members">
+                            <input type="text" placeholder="Nome do integrante 1" class="editable-field">
+                            <input type="text" placeholder="Nome do integrante 2" class="editable-field">
+                            <input type="text" placeholder="Nome do integrante 3" class="editable-field">
+                        </div>
+                    </div>
+
+                    <div class="about-section">
+                        <h3>Escola e Orientadores</h3>
+                        <input type="text" id="schoolName" placeholder="Nome da escola" class="editable-field">
+                        <input type="text" id="teachers" placeholder="Professores/Orientadores" class="editable-field">
+                        <input type="text" id="year" placeholder="Ano" class="editable-field">
+                    </div>
+
+                    <div class="about-section">
+                        <h3>Referências</h3>
+                        <textarea id="references" placeholder="Referências e fontes" class="editable-field textarea"></textarea>
+                    </div>
+                </main>
+            </div>
+        </section>
+
+        <!-- FINAL SCREEN -->
+        <section id="finalScreen" class="screen screen-final">
+            <div class="final-container">
+                <div class="final-content">
+                    <div class="final-guardian">
+                        <div class="guardian-figure-final"></div>
+                    </div>
+
+                    <h1>Você percorreu parte dessa história.</h1>
+                    <p>As raízes continuam vivas.</p>
+
+                    <div id="finalSummary" class="final-summary">
+                        <!-- Resumo das descobertas -->
+                    </div>
+
+                    <p class="final-quote">
+                        "Conhecer o passado também transforma a maneira como enxergamos o presente e imaginamos o futuro."
+                    </p>
+
+                    <div class="final-credits">
+                        <h2>RAÍZES VIVAS</h2>
+                        <p>Uma criação da equipe <strong>NEXOS</strong></p>
+                    </div>
+
+                    <button id="restartBtn" class="btn btn-primary">Recomeçar Jornada</button>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/data/content.js"></script>
+    <script src="js/data/characters.js"></script>
+    <script src="js/utils/storage.js"></script>
+    <script src="js/utils/navigation.js"></script>
+    <script src="js/modules/guardian.js"></script>
+    <script src="js/modules/character.js"></script>
+    <script src="js/modules/map.js"></script>
+    <script src="js/modules/journey.js"></script>
+    <script src="js/modules/content.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
