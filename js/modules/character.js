@@ -55,6 +55,12 @@ window.addEventListener('DOMContentLoaded', () => {
       event.preventDefault();
       const nameInput = document.getElementById('userName');
       const nicknameInput = document.getElementById('userNickname');
+      
+      if (!nameInput.value.trim()) {
+        alert('Por favor, digite seu nome.');
+        return;
+      }
+      
       state.name = nameInput.value.trim();
       state.nickname = nicknameInput.value.trim();
       saveState(state);

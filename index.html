@@ -15,27 +15,53 @@
                 <div class="home-content">
                     <div class="tree-animation">
                         <svg class="tree-logo" viewBox="0 0 200 300" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Roots - Raízes -->
                             <g class="roots">
-                                <path class="root root-1" d="M 100 250 Q 70 270 50 290" fill="none" stroke="#8B5A3C" stroke-width="6"/>
-                                <path class="root root-2" d="M 100 250 Q 130 270 150 290" fill="none" stroke="#8B5A3C" stroke-width="6"/>
-                                <path class="root root-3" d="M 100 250 Q 85 280 75 300" fill="none" stroke="#654321" stroke-width="4"/>
-                                <path class="root root-4" d="M 100 250 Q 115 280 125 300" fill="none" stroke="#654321" stroke-width="4"/>
+                                <path class="root root-1" d="M 95 240 Q 60 270 35 295" fill="none" stroke="#8B5A3C" stroke-width="5" stroke-linecap="round"/>
+                                <path class="root root-2" d="M 105 240 Q 140 270 165 295" fill="none" stroke="#8B5A3C" stroke-width="5" stroke-linecap="round"/>
+                                <path class="root root-3" d="M 92 250 Q 75 280 65 305" fill="none" stroke="#654321" stroke-width="4" stroke-linecap="round"/>
+                                <path class="root root-4" d="M 108 250 Q 125 280 135 305" fill="none" stroke="#654321" stroke-width="4" stroke-linecap="round"/>
+                                <path class="root root-1" d="M 100 240 Q 100 270 100 300" fill="none" stroke="#7a4e32" stroke-width="3" stroke-linecap="round" opacity="0.6"/>
                             </g>
-                            <rect class="trunk" x="90" y="150" width="20" height="100" fill="#654321" rx="4"/>
+                            
+                            <!-- Trunk - Tronco -->
+                            <rect class="trunk" x="88" y="140" width="24" height="100" fill="#5a3927" rx="5"/>
+                            <rect class="trunk" x="85" y="145" width="30" height="95" fill="#6d4535" opacity="0.4" rx="5"/>
+                            
+                            <!-- Main Branches - Galhos Principais -->
                             <g class="branches">
-                                <path class="branch" d="M 95 170 Q 60 150 40 130" fill="none" stroke="#8B5A3C" stroke-width="5" stroke-linecap="round"/>
-                                <path class="branch" d="M 105 170 Q 140 150 160 130" fill="none" stroke="#8B5A3C" stroke-width="5" stroke-linecap="round"/>
-                                <path class="branch" d="M 92 130 Q 70 110 50 90" fill="none" stroke="#8B5A3C" stroke-width="4" stroke-linecap="round"/>
-                                <path class="branch" d="M 108 130 Q 130 110 150 90" fill="none" stroke="#8B5A3C" stroke-width="4" stroke-linecap="round"/>
+                                <path class="branch" d="M 92 165 Q 55 145 35 120" fill="none" stroke="#8B5A3C" stroke-width="5" stroke-linecap="round"/>
+                                <path class="branch" d="M 108 165 Q 145 145 165 120" fill="none" stroke="#8B5A3C" stroke-width="5" stroke-linecap="round"/>
+                                <path class="branch" d="M 90 125 Q 65 105 45 80" fill="none" stroke="#8B5A3C" stroke-width="4" stroke-linecap="round"/>
+                                <path class="branch" d="M 110 125 Q 135 105 155 80" fill="none" stroke="#8B5A3C" stroke-width="4" stroke-linecap="round"/>
                             </g>
+                            
+                            <!-- Secondary Branches - Galhos Secundários -->
+                            <g class="branches" opacity="0.8">
+                                <path class="branch" d="M 55 145 Q 45 130 35 115" fill="none" stroke="#9d6d4a" stroke-width="3" stroke-linecap="round"/>
+                                <path class="branch" d="M 145 145 Q 155 130 165 115" fill="none" stroke="#9d6d4a" stroke-width="3" stroke-linecap="round"/>
+                                <path class="branch" d="M 65 105 Q 55 90 45 75" fill="none" stroke="#9d6d4a" stroke-width="2" stroke-linecap="round"/>
+                                <path class="branch" d="M 135 105 Q 145 90 155 75" fill="none" stroke="#9d6d4a" stroke-width="2" stroke-linecap="round"/>
+                            </g>
+                            
+                            <!-- Leaves - Folhas -->
                             <g class="leaves">
-                                <ellipse class="leaf leaf-1" cx="30" cy="120" rx="8" ry="12" fill="#2D5016" opacity="0.8"/>
-                                <ellipse class="leaf leaf-2" cx="170" cy="120" rx="8" ry="12" fill="#2D5016" opacity="0.8"/>
-                                <ellipse class="leaf leaf-3" cx="45" cy="80" rx="7" ry="11" fill="#3A6B1F" opacity="0.7"/>
-                                <ellipse class="leaf leaf-4" cx="155" cy="80" rx="7" ry="11" fill="#3A6B1F" opacity="0.7"/>
-                                <ellipse class="leaf leaf-5" cx="100" cy="60" rx="8" ry="12" fill="#4A7C2C" opacity="0.8"/>
-                                <ellipse class="leaf leaf-6" cx="75" cy="50" rx="6" ry="10" fill="#2D5016" opacity="0.6"/>
-                                <ellipse class="leaf leaf-7" cx="125" cy="50" rx="6" ry="10" fill="#2D5016" opacity="0.6"/>
+                                <!-- Top crown -->
+                                <ellipse class="leaf leaf-1" cx="100" cy="45" rx="12" ry="18" fill="#2D5016" opacity="0.9"/>
+                                <ellipse class="leaf leaf-2" cx="75" cy="65" rx="10" ry="15" fill="#3A6B1F" opacity="0.85"/>
+                                <ellipse class="leaf leaf-3" cx="125" cy="65" rx="10" ry="15" fill="#3A6B1F" opacity="0.85"/>
+                                
+                                <!-- Middle crown -->
+                                <ellipse class="leaf leaf-4" cx="50" cy="95" rx="9" ry="13" fill="#4A7C2C" opacity="0.8"/>
+                                <ellipse class="leaf leaf-5" cx="150" cy="95" rx="9" ry="13" fill="#4A7C2C" opacity="0.8"/>
+                                <ellipse class="leaf leaf-6" cx="35" cy="125" rx="8" ry="12" fill="#2D5016" opacity="0.75"/>
+                                <ellipse class="leaf leaf-7" cx="165" cy="125" rx="8" ry="12" fill="#2D5016" opacity="0.75"/>
+                                
+                                <!-- Additional leaves for fullness -->
+                                <ellipse class="leaf leaf-1" cx="85" cy="50" rx="9" ry="14" fill="#5a8a3a" opacity="0.7"/>
+                                <ellipse class="leaf leaf-2" cx="115" cy="50" rx="9" ry="14" fill="#5a8a3a" opacity="0.7"/>
+                                <ellipse class="leaf leaf-3" cx="60" cy="75" rx="8" ry="12" fill="#3A6B1F" opacity="0.65"/>
+                                <ellipse class="leaf leaf-4" cx="140" cy="75" rx="8" ry="12" fill="#3A6B1F" opacity="0.65"/>
                             </g>
                         </svg>
                     </div>
@@ -239,7 +265,7 @@
                     <h1>Você percorreu parte dessa história.</h1>
                     <p>As raízes continuam vivas.</p>
                     <div id="finalSummary" class="final-summary"></div>
-                    <p class="final-quote">“Conhecer o passado também transforma a maneira como enxergamos o presente e imaginamos o futuro.”</p>
+                    <p class="final-quote">"Conhecer o passado também transforma a maneira como enxergamos o presente e imaginamos o futuro."</p>
                     <div class="final-credits">
                         <h2>RAÍZES VIVAS</h2>
                         <p>Uma criação da equipe <strong>NEXOS</strong></p>
@@ -250,15 +276,14 @@
         </section>
     </div>
 
-    <script src="js/data/content.js"></script>
-    <script src="js/data/characters.js"></script>
     <script src="js/utils/storage.js"></script>
     <script src="js/utils/navigation.js"></script>
+    <script src="js/data/characters.js"></script>
+    <script src="js/data/content.js"></script>
     <script src="js/modules/guardian.js"></script>
     <script src="js/modules/character.js"></script>
     <script src="js/modules/map.js"></script>
     <script src="js/modules/journey.js"></script>
-    <script src="js/modules/content.js"></script>
     <script src="js/app.js"></script>
 </body>
 </html>
